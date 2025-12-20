@@ -1,0 +1,11 @@
+{
+  "name": "chai-aur-code",
+  "version": "1.0.0",
+  "description": "new project start",
+  "main": "index.js",
+  "scripts": {
+    "test": "node .src/index.js"
+  },
+  "author": "wazir aly",
+  "license": "ISC"
+}
