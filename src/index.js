@@ -1,13 +1,12 @@
-import express from 'express';
-import {conectionDb} from './db/index.js';
+import app from './app.js';
+import {connectDb} from './db/index.js';
 
-const app = express();
-conectionDb();
-const PORT = process.env.PORT || 3000;
-
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+connectDb()
+.then(() => {
+    app.listen(8000, () => {
+        console.log("Server is running on port 8000");
+    });
+})
+.catch((err) => {
+    console.log("Failed to connect to database:", err.message);
 });
